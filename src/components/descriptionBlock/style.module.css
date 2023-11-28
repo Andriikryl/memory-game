@@ -1,0 +1,60 @@
+
+.description__block{
+    --size-height: 0.3571rem;
+    --size-top: 1.8571rem;
+    --size-bottom: 2.4286rem;
+    --size-border: 2px;
+    max-width: 500px;
+    border: none;
+    box-shadow: none;
+    font: 1.1429rem/1rem 'NeueMachina', sans-serif;
+    background: none;
+    color: inherit;
+    padding: 30px;
+    transition: all 0.6s;
+    position: relative;
+}
+.description__block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.6s;
+    clip-path: polygon(
+        0 0.3571rem,
+        calc(100% - var(--size-bottom)) 0.3571rem,
+        calc(100% - var(--size-top)) 0,
+        100% 0,
+        100% 100%,
+        2.4286rem 100%,
+        1.8571rem calc(100% - var(--size-height)),
+        0 calc(100% - var(--size-height)),
+        0 calc(100% - var(--size-border) - var(--size-height)),
+        calc(var(--size-top) + 1px) calc(100% - var(--size-border) - var(--size-height)),
+        calc(var(--size-bottom) + 1px) calc(100% - var(--size-border)),
+        calc(100% - var(--size-border)) calc(100% - var(--size-border)),
+        calc(100% - var(--size-border)) 2px,
+        calc(100% - var(--size-top) + var(--size-border) - 1px) calc(var(--size-border)),
+        calc(100% - var(--size-bottom) + var(--size-border) - 1px) calc(var(--size-height) + var(--size-border)),
+        2px calc(var(--size-height) + var(--size-border)),
+        2px calc(100% - var(--size-border) - var(--size-height)),
+        0 calc(100% - var(--size-border) - var(--size-height))
+      );
+    background: white;
+}
+.box__container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    z-index: 0;
+    transition: all 0.6s;
+    clip-path: polygon(0 0.3571rem, calc(100% - var(--size-bottom)) 0.3571rem, calc(100% - var(--size-top)) 0, 100% 0, 100% 100%, 2.4286rem 100%, 1.8571rem calc(100% - var(--size-height)), 0 calc(100% - var(--size-height)));
+}

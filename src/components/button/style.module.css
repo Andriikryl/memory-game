@@ -1,0 +1,134 @@
+.artButton {
+    --size-height: 0.3571rem;
+    --size-top: 1.8571rem;
+    --size-bottom: 2.4286rem;
+    --size-border: 2px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    font: 1.1429rem/1rem 'NeueMachina', sans-serif;
+    background: none;
+    color: white;
+    padding: 1.4286rem 1.7857rem 1.1429rem;
+    transition: all 0.6s;
+    cursor: pointer;
+    position: relative;
+    height: 4rem;
+    text-transform: uppercase;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.artButtonText {
+    display: block;
+    position: relative;
+    z-index: 2;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.artButton:hover::after {
+    background: white;
+}
+.artButton:hover .artButtonText {
+    color: black;
+}
+.artButton:hover .artButtonAngleLeft {
+    border-top-color: black;
+}
+.artButton:hover .artButtonAngleRight {
+    border-bottom-color: black;
+}
+.artButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.6s;
+    clip-path: polygon(
+        0 0.3571rem,
+        calc(100% - var(--size-bottom)) 0.3571rem,
+        calc(100% - var(--size-top)) 0,
+        100% 0,
+        100% 100%,
+        2.4286rem 100%,
+        1.8571rem calc(100% - var(--size-height)),
+        0 calc(100% - var(--size-height)),
+        0 calc(100% - var(--size-border) - var(--size-height)),
+        calc(var(--size-top) + 1px) calc(100% - var(--size-border) - var(--size-height)),
+        calc(var(--size-bottom) + 1px) calc(100% - var(--size-border)),
+        calc(100% - var(--size-border)) calc(100% - var(--size-border)),
+        calc(100% - var(--size-border)) 2px,
+        calc(100% - var(--size-top) + var(--size-border) - 1px) calc(var(--size-border)),
+        calc(100% - var(--size-bottom) + var(--size-border) - 1px) calc(var(--size-height) + var(--size-border)),
+        2px calc(var(--size-height) + var(--size-border)),
+        2px calc(100% - var(--size-border) - var(--size-height)),
+        0 calc(100% - var(--size-border) - var(--size-height))
+      );
+    background: white;
+}
+.artButton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    z-index: 0;
+    transition: all 0.6s;
+    clip-path: polygon(0 0.3571rem, calc(100% - var(--size-bottom)) 0.3571rem, calc(100% - var(--size-top)) 0, 100% 0, 100% 100%, 2.4286rem 100%, 1.8571rem calc(100% - var(--size-height)), 0 calc(100% - var(--size-height)));
+}
+.artButtonAngleLeft {
+    position: absolute;
+    top: 10px;
+    left: 4.5px;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    border-top: 10px solid white;
+    border-right: 10px solid transparent;
+    transition: all 0.6s;
+}
+.artButtonAngleRight {
+    position: absolute;
+    bottom: 10px;
+    right: 4.5px;
+    width: 0;
+    height: 0;
+    z-index: 1;
+    border-bottom: 10px solid white;
+    border-left: 10px solid transparent;
+    transition: all 0.6s;
+}
+.artButtonType {
+    font-weight: bold;
+    color: black;
+}
+.artButtonType .artButtonAngleLeft, .artButtonType .artButtonAngleRight {
+    display: none;
+}
+.artButtonBluePurple::after {
+    background: linear-gradient(to right, #89dcd5 0%, #9d65bf 100%) !important;
+}
+.artButtonBluePurple::before {
+    background: linear-gradient(135deg, #e4f8f7 0%, #beebe8 19%, #a66bc3 79%, #caaddd 100%) !important;
+}
+.artButtonBlue::after {
+    background: linear-gradient(to right, #89dcd5 0%, #7cb1bb 100%) !important;
+}
+.artButtonBlue::before {
+    background: linear-gradient(135deg, #e1effe 0%, #b5d6f9 21%, #85b8c0 79%, #b9d6db 100%) !important;
+}
+.artButtonGreenYellow::after {
+    background: linear-gradient(to right, #a9f0f4 0%, #eedd75 100%) !important;
+}
+.artButtonGreenYellow::before {
+    background: linear-gradient(135deg, #ecfbfe 0%, #d0f7f8 20%, #f2de7b 79%, #f5ecb3 100%) !important;
+}
+.artButtonYellowPink::after {
+    background: linear-gradient(to right, #f4bb42 0%, #f5bdc4 100%) !important;
+}
+.artButtonYellowPink::before {
+    background: linear-gradient(135deg, #f9db88 0%, #fdf2d1 22%, #fdf2d1 22%, #f5c2c8 79%, #f8dbde 100%) !important;
+}
